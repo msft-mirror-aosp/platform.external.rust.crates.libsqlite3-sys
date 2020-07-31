@@ -1,0 +1,16 @@
+name: "libsqlite3-sys"
+description:
+    "Native bindings to the libsqlite3 library"
+
+third_party {
+  url {
+    type: HOMEPAGE
+    value: "https://crates.io/crates/libsqlite3-sys"
+  }
+  url {
+    type: GIT
+    value: "https://github.com/rusqlite/rusqlite"
+  }
+  version: "0.18.0"
+  last_upgrade_date { year: 2020 month: 6 day: 11 }
+}
