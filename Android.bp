@@ -155,7 +155,7 @@ genrule_defaults {
 // to detect and fix errors.
 bindgen_post_edit_cmd = " sed -i 's/: u32 /: i32 /' $(out) &&"
 
-genrule_default_cmd = "$(location bindgen.sh)"
+genrule_default_cmd = "$(location bindgen.sh) $(location bindgen)"
     + sqlite3_bindgen_flags
     + common_bindgen_flags
     + sqlite3_bindgen_clang_flags
