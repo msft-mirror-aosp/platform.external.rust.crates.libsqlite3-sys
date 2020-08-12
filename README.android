@@ -1,22 +1,8 @@
 This package is imported to Android and uses Android's external/sqlite
 header files and compilation flags to generate bindings.
 
-Whenever this package is updated, the following common procedure
-for external/rust/crates and special steps should be followed:
-* Make sure that the files under android are still preserved.
-* Check for changes in Cargo.toml and rerun cargo2android.py
-  to verify impacts to Android.bp. The manually added modules
-  should be preserved and checked against any new changes from
-  Cargo.toml. Note that new/changed features can also affect
-  build.rs and thus affect the flags passed to bindgen.
-* Similar to Cargo.toml, build.rs changes could add/change
-  bindgen flags. Watch out for changes related to buildtime_bindgen
-  and match them with sqlite3_bindgen_{clang_flags, flags} in
-  Android.bp.
-* Make sure the clang flags are still valid w.r.t. external/sqlite,
-  see sqlite3_bindgen_clang_flags in Android.bp.
-* Run at least the following tests locally:
-  * make with both aosp_x86_64-eng and aosp_arm64-eng
-  * atest -c --include-subdirs external/rust/crates/libsqlite3-sys
-* If the make fails in genrule modules, follow the comments in
-  Android.bp to update the bindgen_post_edit_cmd or bindings.rs.
+If features are changed for the libsqlite3-sys crate, please ensure those
+features are changed in the sqlite_bindgen_build module.
+
+If you update libsqlite3-sys, check its build.rs against the one at
+android/build.rs to ensure it is updated if needed.
