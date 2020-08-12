@@ -1,0 +1,9 @@
+rust_binary_host {
+    name: "sqlite3_bindgen_build",
+    srcs: ["build.rs"],
+    rustlibs: [
+        "libbindgen",
+        "libbindgen_cmd",
+    ],
+    multilib: "first",
+}
