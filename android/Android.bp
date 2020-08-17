@@ -5,5 +5,7 @@ rust_binary_host {
         "libbindgen",
         "libbindgen_cmd",
     ],
+    lints: "android",
+    clippy_lints: "android",
     multilib: "first",
 }
