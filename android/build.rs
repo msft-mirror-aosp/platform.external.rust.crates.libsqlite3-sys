@@ -1,4 +1,5 @@
-use bindgen_cmd;
+//! SQLite bindgen configuration
+
 use bindgen::callbacks::{IntKind, ParseCallbacks};
 
 #[derive(Debug)]
