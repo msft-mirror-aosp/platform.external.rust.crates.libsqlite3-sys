@@ -10,6 +10,7 @@ third_party {
     value: "https://static.crates.io/crates/libsqlite3-sys/libsqlite3-sys-0.18.0.crate"
   }
   version: "0.18.0"
+  license_type: NOTICE
   last_upgrade_date {
     year: 2020
     month: 6
