@@ -59,7 +59,7 @@ rust_test {
 }
 
 // dependent_library ["feature_list"]
-//   pkg-config-0.3.18
+//   pkg-config-0.3.19
 
 // Keep this array in sync with the cflags used in external/sqlite
 // After b/163598610 is resolved, use defaults instead.
