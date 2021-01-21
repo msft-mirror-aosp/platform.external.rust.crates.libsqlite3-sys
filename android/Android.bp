@@ -7,5 +7,4 @@ rust_binary_host {
     ],
     lints: "android",
     clippy_lints: "android",
-    multilib: "first",
 }
