@@ -1,9 +1,9 @@
 --- Android.bp	2021-04-14 17:32:44.882379059 +0000
 +++ Android.bp	2021-04-14 17:33:25.765957305 +0000
 @@ -40,7 +40,10 @@
-     name: "liblibsqlite3_sys",
-     host_supported: true,
      crate_name: "libsqlite3_sys",
+     cargo_env_compat: true,
+     cargo_pkg_version: "0.22.2",
 -    srcs: ["src/lib.rs"],
 +    srcs: [
 +        "src/lib.rs",
@@ -23,7 +23,7 @@
  }
  
  rust_defaults {
-     name: "libsqlite3-sys_defaults",
+     name: "libsqlite3-sys_test_defaults",
      crate_name: "libsqlite3_sys",
 -    srcs: ["src/lib.rs"],
      test_suites: ["general-tests"],
@@ -45,10 +45,10 @@
 +        "src/lib.rs",
 +        ":libsqlite3_bindgen",
 +    ],
-     defaults: ["libsqlite3-sys_defaults"],
+     defaults: ["libsqlite3-sys_test_defaults"],
      test_options: {
          unit_test: true,
-@@ -77,13 +87,23 @@
+@@ -77,10 +87,20 @@
  
  rust_test {
      name: "libsqlite3-sys_device_test_src_lib",
@@ -56,14 +56,11 @@
 +        "src/lib.rs",
 +        ":libsqlite3_bindgen",
 +    ],
-     defaults: ["libsqlite3-sys_defaults"],
+     defaults: ["libsqlite3-sys_test_defaults"],
  }
  
- // dependent_library ["feature_list"]
- //   pkg-config-0.3.19
- 
 -Errors in cargo.out:
--error: linking with `cc` failed: exit code: 1
+-error: linking with `cc` failed: exit status: 1
 -error: aborting due to previous error
 -error: could not compile `libsqlite3-sys`
 +rust_bindgen {
