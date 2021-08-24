@@ -106,3 +106,13 @@ rust_bindgen {
     cflags: ["-I external/sqlite/dist"],
     defaults: ["sqlite-defaults"],
 }
+
+rust_test {
+    name: "libsqlite3_bindgen_test",
+    srcs: [":libsqlite3_bindgen"],
+    crate_name: "sqlite3_bindgen_test",
+    test_suites: ["general-tests"],
+    auto_gen_config: true,
+    clippy_lints: "none",
+    lints: "none",
+}
