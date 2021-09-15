@@ -2,5 +2,7 @@
   "device": true,
   "patch": "patches/Android.bp.patch",
   "run": true,
-  "tests": true
+  "tests": true,
+  "copy-out": true,
+  "add-toplevel-block": "extra-module.bp"
 }
