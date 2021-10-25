@@ -4,5 +4,5 @@
   "run": true,
   "tests": true,
   "copy-out": true,
-  "add-toplevel-block": "extra-module.bp"
+  "add-toplevel-block": "cargo2android-extra-module.bp"
 }
