@@ -2,7 +2,9 @@ diff --git a/Android.bp b/Android.bp
 index 1764165..df125da 100644
 --- a/Android.bp
 +++ b/Android.bp
-@@ -38,9 +38,2 @@ license {
+@@ -36,13 +36,6 @@
+     ],
+ }
  
 -genrule {
 -    name: "copy_libsqlite3-sys_build_out",
@@ -12,49 +14,42 @@ index 1764165..df125da 100644
 -}
 -
  rust_library {
-@@ -53,3 +46,3 @@ rust_library {
+     name: "liblibsqlite3_sys",
+     host_supported: true,
+@@ -50,7 +43,7 @@
+     cargo_env_compat: true,
+     srcs: [
          "src/lib.rs",
 -        ":copy_libsqlite3-sys_build_out",
 +        ":libsqlite3_bindgen",
      ],
-@@ -62,3 +55,5 @@ rust_library {
+     edition: "2018",
+     features: [
+@@ -59,7 +52,7 @@
+         "pkg-config",
+         "vcpkg",
      ],
 -    shared_libs: ["libsqlite3"],
-+    shared_libs: [
-+        "libsqlite",
-+    ],
++    shared_libs: ["libsqlite"],
  }
-@@ -68,8 +63,2 @@ rust_defaults {
-     crate_name: "libsqlite3_sys",
--    srcs: [
--        "src/lib.rs",
+ 
+ rust_test {
+@@ -69,7 +62,7 @@
+     cargo_env_compat: true,
+     srcs: [
+         "src/lib.rs",
 -        ":copy_libsqlite3-sys_build_out",
--    ],
--    cargo_env_compat: true,
--    cargo_pkg_version: "0.22.2",
++        ":libsqlite3_bindgen",
+     ],
      test_suites: ["general-tests"],
-@@ -83,3 +72,5 @@ rust_defaults {
+     auto_gen_config: true,
+@@ -83,7 +76,28 @@
+         "pkg-config",
+         "vcpkg",
      ],
 -    shared_libs: ["libsqlite3"],
-+    shared_libs: [
-+        "libsqlite",
-+    ],
- }
-@@ -88,2 +79,6 @@ rust_test_host {
-     name: "libsqlite3-sys_host_test_src_lib",
-+    srcs: [
-+        "src/lib.rs",
-+        ":libsqlite3_bindgen",
-+    ],
-     defaults: ["libsqlite3-sys_test_defaults"],
-@@ -96,3 +91,28 @@ rust_test {
-     name: "libsqlite3-sys_device_test_src_lib",
-+    srcs: [
-+        "src/lib.rs",
-+        ":libsqlite3_bindgen",
-+    ],
-     defaults: ["libsqlite3-sys_test_defaults"],
- }
++    shared_libs: ["libsqlite"],
++}
 +
 +rust_bindgen {
 +    name: "libsqlite3_bindgen",
@@ -75,4 +70,6 @@ index 1764165..df125da 100644
 +    auto_gen_config: true,
 +    clippy_lints: "none",
 +    lints: "none",
-+}
+ }
+ 
+ rust_library {
