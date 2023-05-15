@@ -1,8 +1,8 @@
 diff --git a/Android.bp b/Android.bp
-index 1764165..df125da 100644
+index 8d9ed58..f3b39a3 100644
 --- a/Android.bp
 +++ b/Android.bp
-@@ -36,13 +36,6 @@
+@@ -36,13 +36,6 @@ license {
      ],
  }
  
@@ -16,7 +16,7 @@ index 1764165..df125da 100644
  rust_library {
      name: "liblibsqlite3_sys",
      host_supported: true,
-@@ -50,7 +43,7 @@
+@@ -50,7 +43,7 @@ rust_library {
      cargo_env_compat: true,
      srcs: [
          "src/lib.rs",
@@ -25,16 +25,16 @@ index 1764165..df125da 100644
      ],
      edition: "2018",
      features: [
-@@ -59,7 +52,7 @@
+@@ -59,7 +52,7 @@ rust_library {
          "pkg-config",
          "vcpkg",
      ],
 -    shared_libs: ["libsqlite3"],
 +    shared_libs: ["libsqlite"],
- }
- 
- rust_test {
-@@ -69,7 +62,7 @@
+     apex_available: [
+         "//apex_available:platform",
+         "//apex_available:anyapex",
+@@ -75,7 +68,7 @@ rust_test {
      cargo_env_compat: true,
      srcs: [
          "src/lib.rs",
@@ -43,7 +43,7 @@ index 1764165..df125da 100644
      ],
      test_suites: ["general-tests"],
      auto_gen_config: true,
-@@ -83,7 +76,28 @@
+@@ -89,5 +82,26 @@ rust_test {
          "pkg-config",
          "vcpkg",
      ],
@@ -71,5 +71,3 @@ index 1764165..df125da 100644
 +    clippy_lints: "none",
 +    lints: "none",
  }
- 
- rust_library {
