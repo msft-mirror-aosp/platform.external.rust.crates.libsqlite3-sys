@@ -1,9 +1,10 @@
 {
-  "add-toplevel-block": "cargo2android-extra-module.bp",
   "copy-out": true,
   "device": true,
   "no-pkg-vers": true,
   "patch": "patches/Android.bp.patch",
+  "product-available": false,
   "run": true,
-  "tests": true
+  "tests": true,
+  "vendor-available": false
 }
