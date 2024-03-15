@@ -92,8 +92,12 @@ rust_bindgen {
     custom_bindgen: "sqlite3_bindgen_build",
     wrapper_src: "wrapper.h",
     source_stem: "bindgen",
-    cflags: ["-I external/sqlite/dist"],
+    header_libs: ["libsqlite"],
     defaults: ["sqlite-defaults"],
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
 }
 
 rust_test {
