@@ -1,20 +1,14 @@
-diff --git a/Android.bp b/Android.bp
-index f36d4cd..4c0da1d 100644
---- a/Android.bp
-+++ b/Android.bp
-@@ -42,7 +42,10 @@ rust_library {
-     crate_name: "libsqlite3_sys",
+--- Android.bp
++++ Android.bp
+@@ -45,6 +45,7 @@
      cargo_env_compat: true,
      cargo_pkg_version: "0.22.2",
--    srcs: ["src/lib.rs"],
-+    srcs: [
-+        "src/lib.rs",
-+        ":libsqlite3_bindgen",
-+    ],
+     crate_root: "src/lib.rs",
++    srcs: [":libsqlite3_bindgen"],
      edition: "2018",
      features: [
          "default",
-@@ -50,6 +53,7 @@ rust_library {
+@@ -52,6 +53,7 @@
          "pkg-config",
          "vcpkg",
      ],
@@ -22,19 +16,15 @@ index f36d4cd..4c0da1d 100644
      apex_available: [
          "//apex_available:platform",
          "//apex_available:anyapex",
-@@ -62,7 +66,10 @@ rust_test {
-     crate_name: "libsqlite3_sys",
+@@ -65,6 +67,7 @@
      cargo_env_compat: true,
      cargo_pkg_version: "0.22.2",
--    srcs: ["src/lib.rs"],
-+    srcs: [
-+        "src/lib.rs",
-+        ":libsqlite3_bindgen",
-+    ],
+     crate_root: "src/lib.rs",
++    srcs: [":libsqlite3_bindgen"],
      test_suites: ["general-tests"],
      auto_gen_config: true,
      test_options: {
-@@ -75,6 +82,7 @@ rust_test {
+@@ -77,6 +80,7 @@
          "pkg-config",
          "vcpkg",
      ],
