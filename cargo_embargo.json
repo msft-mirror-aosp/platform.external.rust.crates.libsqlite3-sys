@@ -8,5 +8,5 @@
   "product_available": false,
   "run_cargo": false,
   "tests": true,
-  "vendor_available": false
+  "vendor_available": true
 }
