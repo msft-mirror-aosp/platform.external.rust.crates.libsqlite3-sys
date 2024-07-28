@@ -1,5 +1,6 @@
 {
   "git": {
-    "sha1": "97c81d68fc28a69e693fa8f7e4384ffc89267dda"
-  }
+    "sha1": "d5f040a751d61fae7bbb707b9ce889dfbbd9ea35"
+  },
+  "path_in_vcs": "libsqlite3-sys"
 }
