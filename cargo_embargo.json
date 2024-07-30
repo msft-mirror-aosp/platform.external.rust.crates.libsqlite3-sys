@@ -5,7 +5,7 @@
       "patch": "patches/Android.bp.patch"
     }
   },
-  "product_available": false,
+  "product_available": true,
   "run_cargo": false,
   "tests": true,
   "vendor_available": true
