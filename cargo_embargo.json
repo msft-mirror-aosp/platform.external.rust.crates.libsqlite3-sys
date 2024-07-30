@@ -4,7 +4,7 @@
       "add_toplevel_block": "bindgen_modules.bp"
     }
   },
-  "product_available": false,
+  "product_available": true,
   "run_cargo": false,
   "tests": true,
   "vendor_available": true
