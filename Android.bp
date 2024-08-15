@@ -43,13 +43,13 @@ rust_library {
     host_supported: true,
     crate_name: "libsqlite3_sys",
     cargo_env_compat: true,
-    cargo_pkg_version: "0.22.2",
+    cargo_pkg_version: "0.30.0",
     crate_root: "src/lib.rs",
     srcs: [":libsqlite3_bindgen"],
-    edition: "2018",
+    edition: "2021",
     features: [
         "default",
-        "min_sqlite_version_3_6_8",
+        "min_sqlite_version_3_14_0",
         "pkg-config",
         "vcpkg",
     ],
@@ -58,6 +58,8 @@ rust_library {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
+    product_available: true,
+    vendor_available: true,
 }
 
 rust_test {
@@ -65,7 +67,7 @@ rust_test {
     host_supported: true,
     crate_name: "libsqlite3_sys",
     cargo_env_compat: true,
-    cargo_pkg_version: "0.22.2",
+    cargo_pkg_version: "0.30.0",
     crate_root: "src/lib.rs",
     srcs: [":libsqlite3_bindgen"],
     test_suites: ["general-tests"],
@@ -73,10 +75,10 @@ rust_test {
     test_options: {
         unit_test: true,
     },
-    edition: "2018",
+    edition: "2021",
     features: [
         "default",
-        "min_sqlite_version_3_6_8",
+        "min_sqlite_version_3_14_0",
         "pkg-config",
         "vcpkg",
     ],
@@ -96,6 +98,8 @@ rust_bindgen {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
+    product_available: true,
+    vendor_available: true,
 }
 
 rust_test {
