@@ -11,6 +11,7 @@ package {
 
 rust_binary_host {
     name: "sqlite3_bindgen_build",
+    host_cross_supported: false,
     srcs: ["build.rs"],
     rustlibs: [
         "libbindgen",

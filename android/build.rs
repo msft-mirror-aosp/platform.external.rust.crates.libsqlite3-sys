@@ -7,7 +7,7 @@ struct SqliteTypeChooser;
 
 impl ParseCallbacks for SqliteTypeChooser {
     fn int_macro(&self, _name: &str, value: i64) -> Option<IntKind> {
-        if value >= i32::min_value() as i64 && value <= i32::max_value() as i64 {
+        if value >= i32::MIN as i64 && value <= i32::MAX as i64 {
             Some(IntKind::I32)
         } else {
             None
