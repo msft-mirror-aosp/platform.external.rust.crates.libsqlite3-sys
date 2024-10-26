@@ -1,7 +1,8 @@
 {
   "package": {
     "libsqlite3-sys": {
-      "add_toplevel_block": "bindgen_modules.bp"
+      "add_toplevel_block": "bindgen_modules.bp",
+      "patch": "patches/Android.bp.patch"
     }
   },
   "product_available": true,
