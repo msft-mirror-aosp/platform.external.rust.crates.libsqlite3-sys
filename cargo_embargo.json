@@ -1,4 +1,5 @@
 {
+  "min_sdk_version": "29",
   "package": {
     "libsqlite3-sys": {
       "add_toplevel_block": "bindgen_modules.bp",
