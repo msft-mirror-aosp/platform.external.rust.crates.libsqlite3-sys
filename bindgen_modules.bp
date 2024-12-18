@@ -11,7 +11,9 @@ rust_bindgen {
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
+    product_available: true,
     vendor_available: true,
+    min_sdk_version: "29",
 }
 
 rust_test {
